@@ -49,7 +49,6 @@ def process_data(
         X = X.drop([label], axis=1)
     else:
         y = np.array([])
-
     X_categorical = X[categorical_features].values
     X_continuous = X.drop(*[categorical_features], axis=1)
 
