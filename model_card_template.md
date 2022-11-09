@@ -18,6 +18,9 @@ Accuracy:
 [0.86987153, 0.8599254,  0.867385,   0.86406962, 0.85702445, 0.8503937, 0.84832159, 0.85536676, 0.86199751, 0.87603648]
 Average acc:
 0.8610392040000001
+Precision: 0.6114819759679573
+Recall: 0.793073593073593
+F1: 0.6905390124387486
 
 ## Ethical Considerations
 Although some attributes such as race, sex and native-country may seem relevant to the model and help with a greater accuracy, the model won't take into considerations any kind of prejudice or marginalization that person went through in their life.

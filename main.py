@@ -6,6 +6,7 @@ from starter.ml.data import process_data
 from starter.ml.model import inference
 from joblib import load
 import pandas as pd
+import os
 # Start up dvc pull.
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
@@ -81,5 +82,3 @@ async def predict_income(person: Person):
     return {
         "prediction": float(preds[0])
     }
-
-

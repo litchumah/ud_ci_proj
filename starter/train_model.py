@@ -2,7 +2,7 @@
 
 from sklearn.model_selection import train_test_split
 from ml.data import process_data
-from ml.model import train_model
+from ml.model import train_model, compute_model_metrics
 import pandas as pd
 from joblib import dump
 # Add the necessary imports for the starter code.
@@ -25,13 +25,17 @@ cat_features = [
 X_train, y_train, encoder, lb = process_data(
     train, categorical_features=cat_features, label="salary", training=True
 )
-print(y_train.shape)
-# dump(encoder,'model/encoder.joblib')
-# dump(lb,'model/label_binarizer.joblib')
+dump(encoder,'model/encoder.joblib')
+dump(lb,'model/label_binarizer.joblib')
 # Proces the test data with the process_data function.
-X_test, y_test, encoder, lb = process_data(
+X_test, y_test, encoder, lb_test = process_data(
     test, categorical_features=cat_features, label="salary", training=False, encoder = encoder
 )
 # Train and save a model.
 model = train_model(X_train,y_train)
-# dump(model,'model/trained_model.joblib')
+dump(model,'model/trained_model.joblib')
+
+precision, recall, fbeta = compute_model_metrics(model.predict(X_test),lb.transform(y_test.values).ravel())
+print(f"Precision: {precision}")
+print(f"Recall: {recall}")
+print(f"F1: {fbeta}")
