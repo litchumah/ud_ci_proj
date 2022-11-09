@@ -4,4 +4,3 @@
     url = ../../local_remote
 ['remote "s3"']
     url = s3://ml-pipeline-prod/
-    profile = ud
