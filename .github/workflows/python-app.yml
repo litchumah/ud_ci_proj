@@ -41,8 +41,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: Setup DVC
-      uses: |
-        iterative/setup-dvc@v1
+      uses: iterative/setup-dvc@v1
     - name: Pull data
       run: |
         dvc pull data -R
