@@ -8,6 +8,8 @@ from joblib import load
 import pandas as pd
 import os
 # Start up dvc pull.
+os.system(f"dvc remote modify --local myremote access_key_id {os.getenv('AWS_ACCESS_KEY_ID')}")
+os.system(f"dvc remote modify --local myremote secret_access_key {os.getenv('AWS_SECRET_ACCESS_KEY')}")
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
     if os.system("dvc pull") != 0:
