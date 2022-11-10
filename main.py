@@ -8,11 +8,8 @@ from joblib import load
 import pandas as pd
 import os
 # Start up dvc pull.
-# os.system(f"dvc remote modify --local s3 access_key_id {os.getenv('AWS_ACCESS_KEY_ID')}")
-# os.system(f"dvc remote modify --local s3 secret_access_key {os.getenv('AWS_ACCESS_KEY_ID')}")
 os.system("dvc config core.no_scm true")
 os.system("dvc pull")
-# os.system("rm -r .dvc .apt/usr/lib/dvc")
 
 app = FastAPI()
 
