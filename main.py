@@ -8,9 +8,10 @@ from joblib import load
 import pandas as pd
 import os
 # Start up dvc pull.
-os.system("dvc config core.no_scm true")
-os.system("dvc pull")
-os.system("rm -r .dvc .apt/usr/lib/dvc")
+os.system("dvc remote list")
+#os.system("dvc config core.no_scm true")
+#os.system("dvc pull")
+#os.system("rm -r .dvc .apt/usr/lib/dvc")
 
 app = FastAPI()
 
