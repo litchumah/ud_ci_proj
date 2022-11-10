@@ -1,0 +1,25 @@
+Slice for: White,
+Accuracy: 0.8539962821391642,
+Precision: 0.8031423290203327,
+Recall: 0.6385011021307861,
+Fbeta: 0.7114203847728202
+Slice for: Black,
+Accuracy: 0.9121317600786627,
+Precision: 0.796875,
+Recall: 0.5862068965517241,
+Fbeta: 0.6754966887417218
+Slice for: Asian-Pac-Islander,
+Accuracy: 0.815590766823161,
+Precision: 0.6382978723404256,
+Recall: 0.6,
+Fbeta: 0.6185567010309279
+Slice for: Amer-Indian-Eskimo,
+Accuracy: 0.9073122529644267,
+Precision: 0.5,
+Recall: 0.3333333333333333,
+Fbeta: 0.4
+Slice for: Other,
+Accuracy: 0.94093567251462,
+Precision: 0.0,
+Recall: 0.0,
+Fbeta: 0.0

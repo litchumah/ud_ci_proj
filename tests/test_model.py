@@ -56,7 +56,7 @@ def test_train_model(data):
         train, categorical_features=cat_features, label="salary", training=True
     )
 
-    model = train_model(X_train, y_train)
+    model, acc = train_model(X_train, y_train)
     results = model.predict(X_train)
     assert results.shape[0] == y_train.shape[0], "The number of labels and results are different!"
 
@@ -82,6 +82,6 @@ def test_scores(data):
         test, categorical_features=cat_features, encoder=encoder, lb=lb, label="salary", training=False
     )
 
-    model = train_model(X_train, y_train)
+    model, acc = train_model(X_train, y_train)
     scores = inference(model=model, X=X_test)
     assert scores.shape[0] == y_test.shape[0], "The number of labels and scores are different!"

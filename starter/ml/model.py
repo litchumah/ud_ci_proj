@@ -25,8 +25,8 @@ def train_model(X_train, y_train):
     model.fit(X_train, y_train)
     scores = cross_val_score(model, X_train, y_train, scoring='accuracy',
                              cv=cv, n_jobs=-1)
-    print(scores)
-    return model
+    acc = sum(scores)/len(scores)
+    return model, acc
 
 
 def compute_model_metrics(y, preds):

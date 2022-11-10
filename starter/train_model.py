@@ -32,7 +32,7 @@ X_test, y_test, encoder, lb_test = process_data(
     test, categorical_features=cat_features, label="salary", training=False, encoder = encoder
 )
 # Train and save a model.
-model = train_model(X_train,y_train)
+model, acc = train_model(X_train,y_train)
 dump(model,'model/trained_model.joblib')
 
 precision, recall, fbeta = compute_model_metrics(model.predict(X_test),lb.transform(y_test.values).ravel())
